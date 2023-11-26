@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteCard extends StatelessWidget {
   const NoteCard({super.key});
@@ -6,7 +7,11 @@ class NoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const EditNoteView();
+        }));
+      },
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         color: const Color(0xffffcc80),
@@ -19,7 +24,7 @@ class NoteCard extends StatelessWidget {
                 title: const Text(
                   "Flutter tips",
                   style: TextStyle(
-                        color: Colors.black, fontSize: 32, fontFamily: "Poppins"),
+                      color: Colors.black, fontSize: 32, fontFamily: "Poppins"),
                 ),
                 subtitle: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 16),
