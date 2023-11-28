@@ -9,6 +9,7 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
         onPressed: () {},
         child: IconButton(
             onPressed: () {
@@ -20,7 +21,7 @@ class NotesView extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16)));
             },
-            icon: const Icon(Icons.add)),
+            icon: const Icon(Icons.add, size: 24,)),
       ),
       body: const NotesViewBody(),
     );

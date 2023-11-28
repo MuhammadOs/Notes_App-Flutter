@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/note_card.dart';
 
@@ -11,7 +12,7 @@ class NotesViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
       child: Column(
         children: [
-          const CustomAppBar(),
+          const CustomAppBar(title: "QuickNote", icon: Icons.search,),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 16.0),
