@@ -30,7 +30,7 @@ class NoteCard extends StatelessWidget {
                       color: Colors.black, fontSize: 32, fontFamily: "Poppins"),
                 ),
                 subtitle: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
                   child: Text(
                     note.subTitle,
                     style: const TextStyle(
@@ -40,7 +40,9 @@ class NoteCard extends StatelessWidget {
                   ),
                 ),
                 trailing: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      note.delete();
+                    },
                     icon: const Icon(
                       Icons.delete,
                       color: Colors.black,
