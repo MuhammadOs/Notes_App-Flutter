@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
-class NoteCard extends StatelessWidget {
-  const NoteCard({super.key});
+import '../models/note_model.dart';
 
+class NoteCard extends StatelessWidget {
+  const NoteCard({super.key, required this.note});
+
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -14,23 +17,23 @@ class NoteCard extends StatelessWidget {
       },
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        color: const Color(0xffffcc80),
+        color: Color(note.color),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 28),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: const Text(
-                  "Flutter tips",
-                  style: TextStyle(
+                title: Text(
+                  note.title,
+                  style: const TextStyle(
                       color: Colors.black, fontSize: 32, fontFamily: "Poppins"),
                 ),
-                subtitle: const Padding(
+                subtitle: Padding(
                   padding: EdgeInsets.symmetric(vertical: 16),
                   child: Text(
-                    "It's Muhammad Osama, building my career",
-                    style: TextStyle(
+                    note.subTitle,
+                    style: const TextStyle(
                         color: Colors.black54,
                         fontSize: 18,
                         fontFamily: "Poppins"),
@@ -44,9 +47,9 @@ class NoteCard extends StatelessWidget {
                       size: 35,
                     )),
               ),
-              const Text(
-                "Nov 26,2023",
-                style: TextStyle(
+              Text(
+                note.date,
+                style: const TextStyle(
                     color: Colors.black54, fontSize: 16, fontFamily: "Poppins"),
               )
             ],

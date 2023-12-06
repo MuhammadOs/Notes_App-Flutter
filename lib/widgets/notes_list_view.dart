@@ -21,7 +21,7 @@ class NotesListView extends StatelessWidget {
             itemCount: notes.length,
             clipBehavior: Clip.antiAliasWithSaveLayer,
             itemBuilder: (context, index) {
-              return const NoteCard();
+              return NoteCard(note: notes[index]);
             },
           ),
         );
