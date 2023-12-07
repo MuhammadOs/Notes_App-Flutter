@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
-import 'package:notes_app/widgets/custom_search_icon.dart';
+
+import 'custom_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title, required this.icon});
+  const CustomAppBar(
+      {super.key, required this.title, required this.icon, this.onPressed});
 
   final String title;
   final IconData icon;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
             title,
             style: const TextStyle(fontSize: 22, fontFamily: "Poppins"),
           ),
-          CustomSearchIcon(icon: icon)
+          CustomIcon(icon: icon, onPressed: onPressed)
         ],
       ),
     );
